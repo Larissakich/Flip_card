@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*** Directions ***/
+/** Horizontal -> right **/
+.flip-horizontal-right:hover .flip-card-inner{
+    transform: rotateY(180deg);
+}
+
+.flip-horizontal-right .flip-card-back{
+    transform: rotateY(180deg);
+}
+
+/** Horizontal -> left **/
+.flip-horizontal-left:hover .flip-card-inner {
+    transform: rotateY(-180deg);
+}
+
+.flip-horizontal-left .flip-card-back {
+    transform: rotateY(-180deg);
+}
+
+/** Vertical - up **/
+.flip-vertical-up:hover .flip-card-inner {
+    transform: rotateX(180deg);
+}
+
+.flip-vertical-up .flip-card-back {
+    transform: rotateX(180deg);
+}
+
+/** Vertical - down **/
+.flip-vertical-down:hover .flip-card-inner {
+    transform: rotateX(-180deg);
+}
+
+.flip-vertical-down .flip-card-back {
+    transform: rotateX(-180deg);
+}
+
+/* The flip card container - set the width and height to whatever you want*/
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 450px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+  
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+  
+/* Position the front and back side */
+.flip-card-front, 
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* It fits the image in the container */
+.flip-card-front img,
+.flip-card-back img {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+}
